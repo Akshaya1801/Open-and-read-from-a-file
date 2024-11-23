@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+FILE *file;
+char *path = "C:\\TURBOC3\\Prog.txt";
+char ch;
+char a;
+file =fopen(path, "r");
+if (file==NULL)
+{
+printf("Error opening file.\n");
+return 1;
+}
+
+printf("File contents:\n");
+while((ch = fgetc(file)) !=EOF){
+putchar(ch);
+}
+
+fclose(file);
+printf("Press any key to exit.\n");
+getchar();
+return 0;
+}
